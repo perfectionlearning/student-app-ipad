@@ -1,0 +1,21 @@
+<script src="scripts/lib/jquery-2.1.0.min.js"></script>
+<script src="scripts/lib/underscore-1.4.1.min.js"></script>
+<script src="scripts/lib/backbone-0.9.2.js"></script>
+<script src="scripts/lib/mathquill.js"></script>
+<script src="scripts/lib/xml-lib.js"></script>
+
+	<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+				"HTML-CSS": {
+					availableFonts: [],
+					preferredFont: null, // force Web fonts
+					webFont: "STIX-Web",
+					matchFontHeight: false
+				},
+
+				skipStartupTypeset: true
+			});
+
+	</script>
+	<script src="//cdn.mathjax.org/mathjax/2.3-latest/MathJax.js?config=MML_HTMLorMML-full.js"></script>
+<!--	<script src="lib/MathJax/MathJax.js?config=MML_HTMLorMML-full.js"></script> -->

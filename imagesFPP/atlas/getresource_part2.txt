@@ -1,0 +1,39 @@
+        ie:null
+    };
+
+    return atlasImages;
+};
+
+String.prototype.removePath = function() {
+    return this.substr(this.lastIndexOf('/') + 1);
+}
+
+var makeFrameDataStr = function(obj) {
+    var str = ', frameData: { ';
+	var props = [];
+	for (var k in obj) {
+		props.push(k + ': ' + obj[k]);
+	}
+	str += props.join(', ') + ' }';
+	return props.length > 0 ? str : '';
+};
+
+var MakeGetResource = function(input, whichProp)
+{
+	var dict = getDict();
+    input = input.rawString();
+	// For some reason, TP is retaining the most recent path for a few sprites.  This cleans them up.
+	input = input.removePath();
+    if (whichProp == 2) {
+        return dict[input].frameData ? makeFrameDataStr(dict[input].frameData) : '';
+    }
+    else {
+   	    return dict[input].name;
+  	}
+
+};
+
+
+MakeGetResource.filterName = "getresource";
+MakeGetResource.isSafe = false;
+Library.addFilter("MakeGetResource");

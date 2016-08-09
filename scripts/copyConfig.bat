@@ -1,0 +1,1 @@
+@copy config_staging.js config.js
