@@ -1,0 +1,1 @@
+The deploy process is a Python script designed to run on a Windows machine. It requires the Tools directory but assumes Tools to be up one level--that is, at the same level as DeployA1's *parent* directory.
