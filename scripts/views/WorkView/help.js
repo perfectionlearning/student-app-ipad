@@ -178,7 +178,8 @@
 	//=======================================================
 	// Help Menu
 	//=======================================================
-	var helpList = ['qzHint', 'video', 'solution', 'tryAnother', 'help', 'boxHelp', 'abort'];
+//	var helpList = ['qzHint', 'video', 'solution', 'tryAnother', 'help', 'boxHelp', 'abort'];
+	var helpList = ['qzHint', 'video', 'solution', 'tryAnother', 'help', 'abort'];
 
 	view.helpMenu = function()
 	{
