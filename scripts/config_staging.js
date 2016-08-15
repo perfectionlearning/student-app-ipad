@@ -107,7 +107,7 @@
 			g: '//alghwstaging.kineticmath.com/gradebook.php',
 			gr: '//alghwstaging.kineticmath.com/class_report.php',
 			ad: '//alghwstaging.kineticmath.com/admin.php',
-			lo: '//test.kineticmath.com/rest/rest.php/users/logout'
+			lo: '//test-ohw.kineticmath.com/rest/rest.php/users/logout'
 		},
 		//?%
 
