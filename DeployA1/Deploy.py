@@ -299,14 +299,14 @@ def process_sources(dir_name, stdout):
     mod_file()
 
     print('--------------------')
-    subprocess.call('cp comb.js Unminified\\' + dir_name + '\comb.js')
+    #subprocess.call('copy comb.js Unminified\\' + dir_name + '\comb.js')
     # Minify the Javascript file
-    subprocess.call('java -jar ..\Tools\yuicompressor-2.4.7.jar --type js -o DeployA1\\' + dir_name + '\scripts\min.js comb.js', stdout=stdout)
-    print('Minify Javascript file command: ' + 'java -jar ..\Tools\yuicompressor-2.4.7.jar --type js -o DeployA1\\' + dir_name + '\scripts\min.js comb.js')
+    subprocess.call('java -jar "C:\Users\Student App Deploy\git-repos\student-app\Tools\yuicompressor-2.4.7.jar" --type js -o DeployA1\\' + dir_name + '\scripts\min.js comb.js', stdout=stdout)
+    print('Minify Javascript file command: ' + 'java -jar C:\Users\Student App Deploy\git-repos\student-app\Tools\yuicompressor-2.4.7.jar --type js -o DeployA1\\' + dir_name + '\scripts\min.js comb.js')
 
     # Minify the CSS file(s)
     concat_files(['css\mathquill.css', 'css\worksheet.css'], 'css\combined.css')
-    subprocess.call('java -jar ..\Tools\yuicompressor-2.4.7.jar --type css -o DeployA1\\' + dir_name + '\css\worksheet.css css\combined.css', stdout=stdout)
+    subprocess.call('java -jar "C:\Users\Student App Deploy\git-repos\student-app\Tools\yuicompressor-2.4.7.jar" --type css -o DeployA1\\' + dir_name + '\css\worksheet.css css\combined.css', stdout=stdout)
 
 #============================================================
 #============================================================
