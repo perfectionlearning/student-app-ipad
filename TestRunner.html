@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>Jasmine Test Runner</title>
+
+  <link rel="stylesheet" type="text/css" href="test/jasmine/jasmine.css">
+  <script type="text/javascript" src="test/jasmine/jasmine.js"></script>
+  <script type="text/javascript" src="test/jasmine/jasmine-html.js"></script>
+  <script type="text/javascript" src="test/sinon-1.2.0.js"></script>
+
+  <!-- include source files here... -->
+
+  <link rel="stylesheet" href="css/worksheet.css">
+<script src="scripts/lib/jquery-2.1.0.min.js"></script>
+<script src="scripts/lib/underscore-1.5.1.min.js"></script>
+<script src="scripts/lib/backbone-1.0.0.js"></script>
+<script src="scripts/lib/mathquill.js"></script>
+<script src="scripts/lib/xml-lib.js"></script>
+<script src="scripts/lib/LaTeXToMathML.js"></script>
+
+	<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+				"HTML-CSS": {
+					availableFonts: [],
+					preferredFont: null, // force Web fonts
+					webFont: "STIX-Web",
+					matchFontHeight: false
+				},
+
+				skipStartupTypeset: true
+			});
+
+	</script>
+	<script src="http://cdn.mathjax.org/mathjax/2.3-latest/MathJax.js?config=MML_HTMLorMML-full.js"></script>
+<!--	<script src="lib/MathJax/MathJax.js?config=MML_HTMLorMML-full.js"></script> -->
+<script src="scripts/config.js"></script>
+
+<script src="scripts/A1PARCC/Game.js"></script>
+<script src="scripts/A1PARCC/Routing.js"></script>
+<script src="scripts/A1PARCC/Styles.js"></script>
+<script src="scripts/tools/error.js"></script>
+
+<script src="scripts/framework/framework.js"></script>
+<script src="scripts/framework/assets.js"></script>
+<script src="scripts/framework/audio.js"></script>
+<script src="scripts/framework/storage.js"></script>
+<script src="scripts/framework/timer.js"></script>
+<script src="scripts/framework/widget.js"></script>
+<script src="scripts/framework/action.js"></script>
+<script src="scripts/framework/docking.js"></script>
+<script src="scripts/framework/layout.js"></script>
+<script src="scripts/framework/tools.js"></script>
+<script src="scripts/framework/events.js"></script>
+<script src="scripts/framework/asyncmgr.js"></script>
+<script src="scripts/framework/scripts.js"></script>
+<script src="scripts/framework/graphics/graphics.js"></script>
+<script src="scripts/framework/graphics/anim.js"></script>
+<script src="scripts/framework/graphics/canvas.js"></script>
+<script src="scripts/framework/graphics/eq.js"></script>
+<script src="scripts/framework/graphics/image.js"></script>
+<script src="scripts/framework/graphics/multi.js"></script>
+<script src="scripts/framework/graphics/rect.js"></script>
+<script src="scripts/framework/graphics/text.js"></script>
+<script src="scripts/framework/graphics/video.js"></script>
+<script src="scripts/framework/graphics/input.js"></script>
+
+<script src="scripts/widgets/primitives.js"></script>
+<script src="scripts/widgets/explodingBox.js"></script>
+<script src="scripts/widgets/menu.js"></script>
+<script src="scripts/widgets/explodingMenu.js"></script>
+<script src="scripts/widgets/iconPopup.js"></script>
+<script src="scripts/widgets/probList.js"></script>
+<script src="scripts/widgets/probListLine.js"></script>
+<script src="scripts/widgets/iconBar.js"></script>
+<script src="scripts/widgets/loadingIndicator.js"></script>
+<script src="scripts/widgets/tooltip.js"></script>
+<script src="scripts/widgets/button.js"></script>
+<script src="scripts/widgets/buttonGrid.js"></script>
+<script src="scripts/widgets/textButton.js"></script>
+<script src="scripts/widgets/inputBox.js"></script>
+<script src="scripts/widgets/question.js"></script>
+<script src="scripts/widgets/multipleChoice.js"></script>
+<script src="scripts/widgets/freeInput.js"></script>
+<script src="scripts/widgets/ansEquation.js"></script>
+<script src="scripts/widgets/essayInput.js"></script>
+<script src="scripts/widgets/answerInput.js"></script>
+<script src="scripts/widgets/step.js"></script>
+<script src="scripts/widgets/stepByStep.js"></script>
+<script src="scripts/widgets/transition.js"></script>
+<script src="scripts/widgets/widgetToggler.js"></script>
+<script src="scripts/widgets/scroller.js"></script>
+<script src="scripts/widgets/scrollerContainer.js"></script>
+<script src="scripts/widgets/videoPlayer.js"></script>
+<script src="scripts/widgets/qcCard.js"></script>
+<script src="scripts/widgets/qImage.js"></script>
+<script src="scripts/widgets/imageOverlay.js"></script>
+<script src="scripts/widgets/textColumn.js"></script>
+<script src="scripts/widgets/borderedBox.js"></script>
+<script src="scripts/widgets/border8.js"></script>
+<script src="scripts/widgets/pagedCollection.js"></script>
+<script src="scripts/widgets/prefsList.js"></script>
+<script src="scripts/widgets/topNav.js"></script>
+<script src="scripts/widgets/container.js"></script>
+<script src="scripts/widgets/statusLine.js"></script>
+<script src="scripts/widgets/fakeLink.js"></script>
+<script src="scripts/widgets/vertDivider.js"></script>
+<script src="scripts/widgets/plainText.js"></script>
+<script src="scripts/widgets/navMenu.js"></script>
+<script src="scripts/widgets/menuLine.js"></script>
+<script src="scripts/widgets/search.js"></script>
+<script src="scripts/widgets/searchResult.js"></script>
+<script src="scripts/widgets/probStatus.js"></script>
+<script src="scripts/widgets/score.js"></script>
+<script src="scripts/widgets/submissions.js"></script>
+<script src="scripts/widgets/assignmentButtons.js"></script>
+<script src="scripts/widgets/assignmentList.js"></script>
+<script src="scripts/widgets/assignmentListLine.js"></script>
+<script src="scripts/widgets/overlayList.js"></script>
+<script src="scripts/widgets/textSmartAlign.js"></script>
+<script src="scripts/widgets/form.js"></script>
+<script src="scripts/widgets/optionList.js"></script>
+<script src="scripts/widgets/textBox.js"></script>
+<script src="scripts/widgets/standards.js"></script>
+<script src="scripts/widgets/graph.js"></script>
+<script src="scripts/widgets/graphGrid.js"></script>
+<script src="scripts/widgets/graphPlotInput.js"></script>
+<script src="scripts/widgets/graphConstInput.js"></script>
+<script src="scripts/widgets/keypad.js"></script>
+<script src="scripts/widgets/kineticInput.js"></script>
+<script src="scripts/widgets/statusOverlay.js"></script>
+<script src="scripts/widgets/chart.js"></script>
+<script src="scripts/widgets/classDisplay.js"></script>
+
+<script src="scripts/actions/click.js"></script>
+<script src="scripts/actions/hover.js"></script>
+<script src="scripts/actions/keypress.js"></script>
+<script src="scripts/actions/tooltip.js"></script>
+<script src="scripts/actions/mouseMove.js"></script>
+<script src="scripts/actions/mouseLeave.js"></script>
+
+<script src="scripts/tools/multiInput.js"></script>
+<script src="scripts/tools/bookDefinition.js"></script>
+<script src="scripts/tools/review.js"></script>
+<script src="scripts/tools/tools.js"></script>
+<script src="scripts/tools/graphTypes.js"></script>
+
+<script src="scripts/model/Assignments.js"></script>
+<script src="scripts/model/ProblemState.js"></script>
+<script src="scripts/model/Problems.js"></script>
+<script src="scripts/model/Result.js"></script>
+<script src="scripts/model/Login.js"></script>
+<script src="scripts/model/TurnIn.js"></script>
+<script src="scripts/model/Classes.js"></script>
+<script src="scripts/model/StudentGrades.js"></script>
+
+<script src="scripts/A1PARCC/Global.js"></script>
+<script src="scripts/views/PrefsPage/PrefsPage.js"></script>
+<script src="scripts/views/ProblemList/ProblemList.js"></script>
+<script src="scripts/views/AssignmentList/AssignmentList.js"></script>
+<script src="scripts/views/DrillResults/DrillResults.js"></script>
+<script src="scripts/views/Classes/Classes.js"></script>
+<script src="scripts/views/Login/ChangeEmail.js"></script>
+<script src="scripts/views/Login/ChangePassword.js"></script>
+<script src="scripts/views/Login/TimedOut.js"></script>
+
+<script src="scripts/views/WorkView/WorkView2.js"></script>
+<script src="scripts/views/WorkView/help.js"></script>
+<script src="scripts/views/WorkView/steps.js"></script>
+<script src="scripts/views/WorkView/submit.js"></script>
+<script src="scripts/views/WorkView/widgetList.js"></script>
+<script src="scripts/views/WorkView/eventRouter.js"></script>
+<script src="scripts/views/WorkView/layout.js"></script>
+<script src="scripts/views/WorkView/modes.js"></script>
+<script src="scripts/views/WorkView/modeOHW.js"></script>
+<script src="scripts/views/WorkView/modeSingleProb.js"></script>
+<script src="scripts/views/WorkView/modeDrill.js"></script>
+
+<script src="imagesA1/atlas/atlas.js"></script>
+<script src="scripts/A1PARCC/Resources.js"></script>
+<script src="scripts/A1PARCC/LayoutList.js"></script>
+<script src="scripts/ScoringFPP.js"></script>
+<script src="scripts/scriptOhw.js"></script>
+<script src="scripts/scriptQc.js"></script>
+<script src="scripts/scriptMultiPart.js"></script>
+<script src="scripts/Version.js"></script>
+
+  <!-- include spec files here... -->
+  <script type="text/javascript" src="test/specs/test_framework.js"></script>
+  <script type="text/javascript" src="test/specs/test_AtAGlance.js"></script>
+  <script type="text/javascript" src="test/specs/test_Comm.js"></script>
+  <script type="text/javascript" src="test/specs/test_models.js"></script>
+  <script type="text/javascript" src="test/specs/test_bookDef.js"></script>
+
+</head>
+<body>
+
+<script type="text/javascript">
+  jasmine.getEnv().addReporter(new jasmine.TrivialReporter());
+  jasmine.getEnv().execute();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,4 @@
+var getDict = function() {
+
+    // Include images that belong in the Atlas; exclude anything that's used as a tiled background.
+    var atlasImages = {
