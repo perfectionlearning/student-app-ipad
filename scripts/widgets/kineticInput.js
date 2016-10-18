@@ -356,6 +356,10 @@ framework.widget.kineticInput = function()
 				that.target = data.owner;
 			}
 		}
+        // for graphConstInput, which uses inputBox. needed for iPad.
+        else {
+            that.target = data;
+        }
 	}
 
 	//=======================================================
