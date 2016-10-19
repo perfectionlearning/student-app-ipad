@@ -398,6 +398,8 @@
 	{
 			if(layout.qType === 'essay' || layout.qType === 'graphPlot')
 				drawList.setParam('keypad', 'hidden', true);
+			else if(layout.qType === 'graphConst')
+				drawList.setParam('keypad', 'hidden', false);
 	}
 
 	//=======================================================
