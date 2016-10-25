@@ -566,10 +566,10 @@
 		wid && wid.clearText();
 
 		if (typeof(text) !== 'function') {
-			wid && wid.showText(text);
+			wid && wid.showText(text, color);
 			view.showText(text, color);
 		} else {
-			wid && wid.showText(text()); //end of step feedback //resultText
+			wid && wid.showText(text(), color); //end of step feedback //resultText
 			view.showText(text(), color); //main answer //responseText
 		}
 	}

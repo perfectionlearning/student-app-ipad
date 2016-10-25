@@ -239,7 +239,7 @@ framework.widget.stepByStep = function()
 			{
 				stepWids[curStep].showSolution(that.curAnswer());	// Fill in the answers
 				stepWids[curStep].cleanup();		// Go into compact mode
-				that.showText("Your final answer has been submitted. It was incorrect.", style.sadColor); //jd hack to show text after final step
+				that.showText("Your final answer has been submitted. It was incorrect.", app.style.sadColor); //jd hack to show text after final step
 			}
 
 			curStep++;
