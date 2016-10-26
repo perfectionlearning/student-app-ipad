@@ -169,7 +169,7 @@
 				// RT: adjust field position for steps that include text before answer fields.
 				var steps = $(element).children('.step');
 				if (steps.length > 1) {
-					dy += 30; // fields were too high by about 30 pixels. Dagan would have my blood for doing it this way.
+					dy += 30; // Fields were too high by about 30 pixels. Dagan would have my blood for doing it this way.
 				}
 
 				////////////////////////////////////
