@@ -457,7 +457,7 @@
 
 			keypad: {
 			dock: {
-				top: 'stage scrolltop 450',
+				top: 'stage scrolltop 499',
 				left: 'stage left 0',
 			}
 		}
