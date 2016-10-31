@@ -22,6 +22,9 @@
 	framework.prototype.BACK = -50;
 	framework.prototype.BOTTOM = -100;
 
+	framework.prototype.IPAD_INNER = 704;
+	framework.prototype.IPAD_KEYPAD_Y = 499;
+
 	//===========================================================================================
 	// Private functions
 	//===========================================================================================
@@ -208,6 +211,35 @@
 
 		if (fw.verifyObject(el, 'Moving'))
 			el.css('top', y + "px");
+	}
+
+	//=======================================================
+	//
+	//=======================================================
+	framework.prototype.setKeypadPos = function(el)
+	{
+		var y = fw.IPAD_KEYPAD_Y + window.innerHeight - fw.IPAD_INNER;
+		if (fw.verifyObject(el, 'Moving'))
+		{
+			el.css('position', 'fixed');
+			fw.setX(el, 0);
+			fw.setY(el, y);
+		}
+	}
+
+	//=======================================================
+	//
+	//=======================================================
+	framework.prototype.setKeypadButtonPos = function(el, x, y)
+	{
+		y = y - window.pageYOffset + window.innerHeight - fw.IPAD_INNER;
+
+		if (fw.verifyObject(el, 'Moving'))
+		{
+			el.css('position', 'fixed');
+			fw.setX(el, x);
+			fw.setY(el, y);
+		}
 	}
 
 	//=======================================================

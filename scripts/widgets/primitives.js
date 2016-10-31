@@ -23,7 +23,14 @@
 		function hideSelf() { fw.hide(this.el) }
 		function setAlphaSelf(value) { fw.alpha(this.el, value); }
 		function getPos() { return fw.getPos(this.el); }
-		function setPosSelf(x, y) { fw.setPos(this.el, x, y) }
+		function setPosSelf(x, y) { 
+			if (this.keypad) 
+				fw.setKeypadPos(this.el);
+			else if (this.keypadButton) 
+				fw.setKeypadButtonPos(this.el, x, y);
+			else 
+				fw.setPos(this.el, x, y);
+		}
 		function adjustPosSelf(x, y) { return fw.adjustPos(this.el, x, y) }
 		function terminateSelf() { fw.remove(this.el); }
 

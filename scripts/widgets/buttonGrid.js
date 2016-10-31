@@ -39,6 +39,7 @@ framework.widget.buttonGrid = function()
 				button.wid = that.add('button', {
 					image: button.asset,
 					frame: button.frame,
+					keypadButton: true,
 					text: button.text,
 					font: that.font,		// Only used if button.text is set
 					color: that.color,		// Only used if button.text is set

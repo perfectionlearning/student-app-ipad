@@ -38,6 +38,7 @@ framework.widget.button = function()
 	{
 		btn = that.add('image', {
 			scale: that.scale,
+			keypadButton: that.keypadButton,
 			image: that.image,
 			frame: curFrame,
 			cursor: 'pointer',
@@ -65,6 +66,7 @@ framework.widget.button = function()
 		{
 			text = that.add('text', {
 				text: that.text,
+				keypadButton: that.keypadButton,
 				font: that.font,
 				color: that.color,
 				cursor: 'pointer',
