@@ -13,7 +13,7 @@
 //		{ t:'Graphs', icon: 'Graph', act: app.graphs },
 
 		//%?USER_LEVEL=none%		// Only teachers can use admin
-		{ t:'Grades', icon: 'Graph', act: app.grades },
+//		{ t:'Grades', icon: 'Graph', act: app.grades },
 		//?%
 
 		//%?USER_LEVEL=student%		// Only students have access to Settings right now
@@ -21,7 +21,7 @@
 		//?%
 
 		//%?USER_LEVEL=none%		// Only teachers can use admin
-		{ t:'Admin', icon: 'Admin', act: app.admin },
+//		{ t:'Admin', icon: 'Admin', act: app.admin },
 		//?%
 
 		//%?USER_LEVEL=student%		// Only students have access to Settings right now
@@ -29,7 +29,7 @@
 		//?%
 
 		//%?USER_LEVEL=none%		// Only teachers can use admin
-		{ t:'Support', icon: 'Help', act: app.supportPage },
+//		{ t:'Support', icon: 'Help', act: app.supportPage },
 		//?%
 
 		//%?USER_LEVEL=student%		// Only students can log out. It causes issues in AMSCO A1.
