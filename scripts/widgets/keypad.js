@@ -62,6 +62,7 @@ framework.widget.keypad = function()
 	function drawBackground()
 	{
 		background = that.add('image', {
+			keypad: true,
 			image: style.background,
 			depth: fw.FORE-5,
 			hidden: true,
