@@ -165,8 +165,6 @@
 				var elOfs = $el.offset();
 				var dx = thisOfs.left - elOfs.left;
 				var dy = thisOfs.top - elOfs.top;
-				// RT: adjust field position for steps that include text before answer fields.
-				var steps = $(element).children('.step');
 
 				////////////////////////////////////
 				// MathJax left padding compensation
