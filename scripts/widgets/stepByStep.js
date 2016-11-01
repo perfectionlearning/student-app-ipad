@@ -112,6 +112,8 @@ framework.widget.stepByStep = function()
 			addOpts.skipScroll = true;
 
 		scroller.addWidget(wid, addOpts);
+		// Step added; reposition input fields.
+		fw.eventPublish('finished:step', that);
 		return wid;
 	}
 

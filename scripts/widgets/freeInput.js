@@ -36,6 +36,7 @@ framework.widget.freeInput = function()
 	fw.eventSubscribe('blur:inputbox', lostFocus);	// The input boxes say they lost focus
 	fw.eventSubscribe('loseFocus:input', blurBoxes);	// Something external wants us to blur the boxes
 	fw.eventSubscribe('keypress:Enter', enterInputBox); // Enter key pressed in input box.
+    fw.eventSubscribe('finished:step', repositionInputFields); // Attempt to fix input fields.
 
 	// The rest is all deferred until the widget is made visible.  Until displayWid is visible, we can't proceed.
 
@@ -79,6 +80,16 @@ framework.widget.freeInput = function()
 			fw.warning('Attempting to display non-existant free inputs.');
 
 		that.renderComplete();
+	}
+
+	//=======================================================
+	// This is triggered when a step has been added.
+	// At this point, it's often neecessary to recalculate
+	// input field positions.
+	//=======================================================
+	function repositionInputFields(obj)
+	{
+		showInputs();
 	}
 
 	//=======================================================
