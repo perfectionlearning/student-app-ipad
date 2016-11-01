@@ -36,7 +36,7 @@ framework.widget.freeInput = function()
 	fw.eventSubscribe('blur:inputbox', lostFocus);	// The input boxes say they lost focus
 	fw.eventSubscribe('loseFocus:input', blurBoxes);	// Something external wants us to blur the boxes
 	fw.eventSubscribe('keypress:Enter', enterInputBox); // Enter key pressed in input box.
-    fw.eventSubscribe('finished:step', repositionInputFields); // Attempt to fix input fields.
+	fw.eventSubscribe('finished:step', repositionInputFields); // Attempt to fix input fields.
 
 	// The rest is all deferred until the widget is made visible.  Until displayWid is visible, we can't proceed.
 
