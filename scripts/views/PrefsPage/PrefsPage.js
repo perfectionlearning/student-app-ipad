@@ -14,10 +14,10 @@
 		},
 
 		{
-			label: 'Email',
+			label: 'Username',
 			action: changeEmail,
 			button: 'PrefsEmail',
-			text: "Change your email address."
+			text: "Change your username."
 		}
 
 	];
