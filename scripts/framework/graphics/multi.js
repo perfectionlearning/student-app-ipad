@@ -113,8 +113,12 @@
 	//=======================================================
 	framework.prototype.getMultiBoxes = function(el)
 	{
-		if (fw.verifyObject(el, 'Getting boxes from'))
-			return el.data('mmlAnswer').boxes();
+		if (fw.verifyObject(el, 'Getting boxes from')) {
+			if (!el.data('mmlAnswer')) // mmlAnswer not present; return empty array.
+				return [];
+			else
+				return el.data('mmlAnswer').boxes();
+		}
 	}
 
 })();
