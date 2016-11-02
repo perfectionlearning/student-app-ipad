@@ -28,7 +28,7 @@
 	app.book_id = 40; // for use with login (34=FPP, 40=PARCC A1)
 
 	// Path to book content.  This can be absolute or relative.
-	app.bookPath = '/books/A1PARCC/content/';		// Used for videos only in AMSCO Math
+	app.bookPath = '../content/';		// Used for videos only in AMSCO Math
 //	app.bookFile = 'BookDefinition.json';		// FPP only
 
 	// Path to lesson plan object / Standards code correlation.  This can be absolute or relative.
