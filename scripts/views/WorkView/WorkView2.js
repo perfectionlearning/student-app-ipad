@@ -512,8 +512,7 @@
 			id: 'continueBtn',
 			image: 'WVMoveOn',
 			frame: frame,
-			click: frame === 'NextProblem' ? view.
-			Problem: view.reload
+			click: frame === 'NextProblem' ? view.handleNextProblem : view.reload
 		}, dock);
 
 		// Clear the old buttons
