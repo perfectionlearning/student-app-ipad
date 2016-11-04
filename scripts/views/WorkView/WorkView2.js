@@ -512,7 +512,8 @@
 			id: 'continueBtn',
 			image: 'WVMoveOn',
 			frame: frame,
-			click: frame === 'NextProblem' ? view.handleNextProblem: view.reload
+			click: frame === 'NextProblem' ? view.
+			Problem: view.reload
 		}, dock);
 
 		// Clear the old buttons
@@ -525,6 +526,12 @@
 		var wid1 = fw.getWidget('continueBtn');
 		wid1.hide();
 		window.setTimeout(view.nextProblem,0);
+	}
+	
+	view.handlePrevProblem = function()
+	{
+		app.loadingBox();
+		window.setTimeout(view.prevProblem,0);
 	}
 
 
