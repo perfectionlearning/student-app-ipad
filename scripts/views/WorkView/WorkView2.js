@@ -524,7 +524,9 @@
 	{
 		app.loadingBox();
 		var wid1 = fw.getWidget('continueBtn');
-		wid1.hide();
+		if (!!wid1) {
+			wid1.hide();
+		}
 		window.setTimeout(view.nextProblem,0);
 	}
 	
