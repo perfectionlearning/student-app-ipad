@@ -119,7 +119,6 @@
 	//=======================================================
 	function postInit()
 	{
-		app.clearLoadingBox();
 
 		problem = app.problemList.at(app.curProbIndex);
 
@@ -138,14 +137,16 @@
 		// Init any modules that require it
 		view.initFocusManager();
 		view.stepModuleInit(problem);
-		view.initHelp(problem);
-
+		view.initHelp(problem);	
+	
 		// Open steps if required -- move to an answerType-based plugin system!
 		modeSpecific();
 
 		if (app.FunctionalTestMode) {
 			app.globalReadyForFunctionalTest();
 		}
+
+		app.clearLoadingBox();
 	}
 
 	//=======================================================
@@ -511,12 +512,28 @@
 			id: 'continueBtn',
 			image: 'WVMoveOn',
 			frame: frame,
-			click: frame === 'NextProblem' ? view.nextProblem: view.reload
+			click: frame === 'NextProblem' ? view.
+			Problem: view.reload
 		}, dock);
 
 		// Clear the old buttons
 		wid && wid.removeButtons();
 	}
+
+	view.handleNextProblem = function()
+	{
+		app.loadingBox();
+		var wid1 = fw.getWidget('continueBtn');
+		wid1.hide();
+		window.setTimeout(view.nextProblem,0);
+	}
+	
+	view.handlePrevProblem = function()
+	{
+		app.loadingBox();
+		window.setTimeout(view.prevProblem,0);
+	}
+
 
 	//=======================================================
 	//=======================================================
@@ -532,8 +549,9 @@
 	//=======================================================
 	function loadProblem()
 	{
+		app.loadingBox();
 		// Clear the ID, forcing a reload
-//		problem.set({chID: ''});
+		//		problem.set({chID: ''});
 
 		// Ensure we're requesting a valid problem
 		if (app.curProbIndex >= 0 && app.curProbIndex < app.problemList.length)
@@ -547,6 +565,7 @@
 	//=======================================================
 	view.nextProblem = function()
 	{
+		app.loadingBox();
 		var len = app.problemList.length;
 		if (++app.curProbIndex >= len)
 			app.curProbIndex = 0;
@@ -558,6 +577,7 @@
 	//=======================================================
 	view.prevProblem = function()
 	{
+		app.loadingBox();
 		var len = app.problemList.length;
 		if (--app.curProbIndex < 0)
 			app.curProbIndex = len-1;
