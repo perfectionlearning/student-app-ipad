@@ -309,7 +309,7 @@
 				image: 'STIcons',
 				frame: 'Next',
 				depth: fw.MIDPLUS,
-				click: view.nextProblem
+				click: view.handleNextProblem
 			}
 		],
 
@@ -318,7 +318,7 @@
 				image: 'STIcons',
 				frame: 'Back',
 				depth: fw.MIDPLUS,
-				click: view.prevProblem
+				click: view.handlePrevProblem
 			}
 		]
 	}
