@@ -950,7 +950,7 @@
 			easeOutRate: 200,
 
 			closeDelay: 400,	// Time before closing when the mouse leaves the menu
-			autoClose: 1200		// Amount of time before the menu closes if the mouse doesn't enter (ms)
+			autoClose: 4000		// Amount of time before the menu closes if the mouse doesn't enter (ms)
 		},
 
 		//-----------------------------------------------------

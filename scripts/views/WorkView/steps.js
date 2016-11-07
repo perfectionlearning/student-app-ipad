@@ -140,22 +140,24 @@
 	//=======================================================
 	// Enter step-by-step mode to display the solution
 	//=======================================================
-	view.solutionMode = function()
+	view.solutionMode = function(problem) // problem is needed to retrieve problem's status (origStatus)
 	{
 		// If steps are visible, fade out and back in
 		// If steps aren't visible, do a transition
 		if (view.isStepModeActive())
 		{
 //			fw.getWidget('stepByStep').fadeOut(5000, 0, fadeTransition);
-			fadeTransition();
+			fadeTransition(problem);
 		}
 		else
 		{
 			// Create step-by-step widget
 			var stepWid = fw.createWidget('stepByStep', view.widgetLists.stepByStep, getStepDock());
 
-			// Show solution
+			// Show solution and final status at end of steps (for iPad)
 			stepWid.allSteps();
+			var msgObj = app.scoring.getMsgObj(problem.get('origStatus'), 'LastStep');
+			stepWid.showText(msgObj.text, msgObj.color);
 
 			// Transition
 			doTransition(stepWid, true);
@@ -164,7 +166,7 @@
 
 	//=======================================================
 	//=======================================================
-	function fadeTransition()
+	function fadeTransition(problem) // problem is needed to retrieve problem's status (origStatus)
 	{
 		// Remove the steps
 		view.clearStepMode();
@@ -172,8 +174,10 @@
 		// Create step-by-step widget
 		var stepWid = fw.createWidget('stepByStep', view.widgetLists.stepByStep, getStepDock());
 
-		// Show solution
+		// Show solution and final status at end of steps (for iPad)
 		stepWid.allSteps();
+		var msgObj = app.scoring.getMsgObj(problem.get('origStatus'), 'LastStep');
+		stepWid.showText(msgObj.text, msgObj.color);
 
 		// MathJaxed items are already visible, so this looks weird
 //		stepWid.fadeIn(1500);
