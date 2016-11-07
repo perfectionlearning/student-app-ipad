@@ -405,6 +405,31 @@
 	}
 
 	//=======================================================
+	// An answer has been submitted.  Update the state and score
+	// according to the current state.
+	//
+	// mode = '' || 'Step' || 'LastStep'
+	//=======================================================
+	app.scoring.getMsgObj = function(state, mode)
+	{
+		mode = mode || '';
+		var msgObj = {};
+
+		var entry = submitMap[state + mode];
+		if (!entry)
+			return fw.debug('Unknown submission state: ' + state + ', ' + mode);
+
+		entry.stateAction && entry.stateAction();
+
+		curScript = activeModel[entry.modelAction](mode);
+		var textElem = curScript.indexOf('TEXT');
+		msgObj.text = typeof curScript[textElem+2] === 'function' ? curScript[textElem+2]() : curScript[textElem+2];
+		msgObj.color = curScript[textElem+1];
+
+		return msgObj;	
+	}
+
+	//=======================================================
 	// User viewed the solution.  Update the state and choose an action.
 	//=======================================================
 	app.scoring.sawSolution = function()

@@ -64,6 +64,7 @@
 	//=======================================================
 	function cleanStatus(val)
 	{
+		val.origStatus = val.status;
 		val.status = app.translateStatus(val.status);
 
 		for (var i = 0, len = val.solve.length; i < len; i++)
