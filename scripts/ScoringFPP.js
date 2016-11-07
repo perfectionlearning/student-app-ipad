@@ -405,10 +405,9 @@
 	}
 
 	//=======================================================
-	// An answer has been submitted.  Update the state and score
-	// according to the current state.
-	//
-	// mode = '' || 'Step' || 'LastStep'
+	// Return a message object based on state and mode
+	// This was added to retrieve the approprate message
+	// after the last step of a previously submitted problem.
 	//=======================================================
 	app.scoring.getMsgObj = function(state, mode)
 	{

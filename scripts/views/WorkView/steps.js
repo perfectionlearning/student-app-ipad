@@ -140,7 +140,7 @@
 	//=======================================================
 	// Enter step-by-step mode to display the solution
 	//=======================================================
-	view.solutionMode = function(problem)
+	view.solutionMode = function(problem) // problem is needed to retrieve problem's status (origStatus)
 	{
 		// If steps are visible, fade out and back in
 		// If steps aren't visible, do a transition
@@ -154,7 +154,7 @@
 			// Create step-by-step widget
 			var stepWid = fw.createWidget('stepByStep', view.widgetLists.stepByStep, getStepDock());
 
-			// Show solution
+			// Show solution and final status at end of steps (for iPad)
 			stepWid.allSteps();
 			var msgObj = app.scoring.getMsgObj(problem.get('origStatus'), 'LastStep');
 			stepWid.showText(msgObj.text, msgObj.color);
@@ -166,7 +166,7 @@
 
 	//=======================================================
 	//=======================================================
-	function fadeTransition(problem)
+	function fadeTransition(problem) // problem is needed to retrieve problem's status (origStatus)
 	{
 		// Remove the steps
 		view.clearStepMode();
@@ -174,7 +174,7 @@
 		// Create step-by-step widget
 		var stepWid = fw.createWidget('stepByStep', view.widgetLists.stepByStep, getStepDock());
 
-		// Show solution
+		// Show solution and final status at end of steps (for iPad)
 		stepWid.allSteps();
 		var msgObj = app.scoring.getMsgObj(problem.get('origStatus'), 'LastStep');
 		stepWid.showText(msgObj.text, msgObj.color);

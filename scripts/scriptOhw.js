@@ -231,7 +231,7 @@
 	//=======================================================
 	// Determines the appropriate action given a wrong answer
 	//=======================================================
-	function wrongAction(mode)
+	function wrongAction(mode) // added mode parameter to allow testing for LastStep when retrieving a previously submitted problem. (submissions wouldn't have been updated in this case.)
 	{
 		// Only one attempt is allowed for radio inputs
 		if (helper.answerType() === 'radio')

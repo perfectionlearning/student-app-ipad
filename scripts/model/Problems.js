@@ -64,7 +64,7 @@
 	//=======================================================
 	function cleanStatus(val)
 	{
-		val.origStatus = val.status;
+		val.origStatus = val.status; // Preserve original status for use in retrieving approprate status message. Used for last problem submitted.
 		val.status = app.translateStatus(val.status);
 
 		for (var i = 0, len = val.solve.length; i < len; i++)
