@@ -334,7 +334,7 @@
 
 		// Create the widget
 		app.scoring.resetStep();		// We need this, just for data lookup.  It's not really state-related.
-		view.solutionMode();
+		view.solutionMode(problem); // add: pass problem, so the model is available to solutionMode.
 	}
 
 	//=======================================================

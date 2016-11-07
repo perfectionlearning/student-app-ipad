@@ -231,14 +231,14 @@
 	//=======================================================
 	// Determines the appropriate action given a wrong answer
 	//=======================================================
-	function wrongAction()
+	function wrongAction(mode) // added mode parameter to allow testing for LastStep when retrieving a previously submitted problem. (submissions wouldn't have been updated in this case.)
 	{
 		// Only one attempt is allowed for radio inputs
 		if (helper.answerType() === 'radio')
 			return scriptList.wrongRadio;
 
-		var submits = helper.pget('submissions')*1 + 1;	// The problem was just submitted.  The submission count is now 1 higher.
 		var maxSubs = app.getMaxSubmissions();
+		var submits = mode === 'LastStep' ? maxSubs : helper.pget('submissions')*1 + 1;	// The problem was just submitted.  The submission count is now 1 higher.
 
 		if (submits < maxSubs)
 			return scriptList.wrong;
