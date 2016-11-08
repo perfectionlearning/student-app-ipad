@@ -263,6 +263,8 @@ framework.widget.assignmentList = function()
 			right: that.id + ' right -' + style.rightMargin
 		});
 
+		
+
 		// Add a shadow border
 		// that.add('border8', {
 		// 	target: backdrop,

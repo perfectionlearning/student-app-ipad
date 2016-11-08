@@ -25,7 +25,7 @@ framework.widget.pagedCollection = function()
 	var nextButton, prevButton;
 
 	var curPage = 0, curItem = 0;
-	var pageSize, curY, pageY, lastPage = 0;
+	var pageSize = 0, curY, pageY, lastPage = 0;
 	var pageIndices = [0];
 
 	pageY = curY = that.topMargin;
@@ -132,7 +132,13 @@ framework.widget.pagedCollection = function()
 
 		// Determine whether it will fit on the current page
 		var h = newWid.height();
-
+		
+		if (newWid.idx === 0)
+		{
+			//pageSize is not getting reset if coming back from classes, ensure it does
+			pageSize = 0;
+		}
+		
 		if (pageY + h > pageSize)
 		{
 			//pageY = that.topMargin;
