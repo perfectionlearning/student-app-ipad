@@ -60,7 +60,7 @@
 	app.schemeBg = {'main': '#2c3e50'};
 
 	//%?USER_LEVEL=teacher%
-	app.isTeacher = true;		// This gets enabled for teachers. It changes navigation for the homework button.
+//	app.isTeacher = true;		// This gets enabled for teachers. It changes navigation for the homework button.
 	//?%
 
 	//=======================================

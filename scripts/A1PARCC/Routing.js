@@ -38,7 +38,7 @@
 		drillResults: {bi: 1, v: "DrillResults", up: "assignList"},
 	};
 	//%?USER_LEVEL=teacher%
-	objectMap.drillResults.up = "teacherAssignList";
+//	objectMap.drillResults.up = "teacherAssignList";
 	//?%
 
 	//-----------------------------------
@@ -61,7 +61,7 @@
 			'studentGrades': 'studentGrades',
 
 		//%?USER_LEVEL=teacher%		// DG: Temporarily removed for students until we add metadata to problem lists
-			'assign/:id': 'assign',
+//			'assign/:id': 'assign',
 		//?%
 
 			'changeemail' : 'loginChangeEmail',
