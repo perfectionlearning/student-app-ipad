@@ -118,18 +118,25 @@ framework.widget.probList = function()
 		lines.push(prob);
 	}
 
-	//=======================================================
-	// One of the problems was clicked on
-	//=======================================================
-	function problemClicked(probNum)
+
+	function probClickHandler(probNum) 
 	{
 		// Convert from 1-based numbering to a collection index
-//		var prob = that.collection.at(probNum-1);
+		var prob = that.collection.at(probNum-1);
 
 		// Notify the parent that a problem was selected.
 		// Send the model back, because we will eventually add sorting.  The problem
 		// index should always remain the same, so that could have been used as well.
 		that.select && that.select(probNum-1);
+	}
+
+	//=======================================================
+	// One of the problems was clicked on
+	//=======================================================
+	function problemClicked(probNum)
+	{
+		
+		probClickHandler(probNum);
 	}
 
 	//=======================================================
