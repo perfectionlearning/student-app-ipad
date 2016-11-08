@@ -122,7 +122,7 @@
 			g: '//mathx.kineticmath.com/gradebook.php',
 			gr: '//mathx.kineticmath.com/class_report.php',
 			ad: '//mathx.kineticmath.com/admin.php',
-			lo: '//ohw.kineticmath.com/rest/rest.php/users/logout'
+			lo: '//api.kineticmath.com/rest/rest.php/users/logout'
 		}
 		//?%
 	};
