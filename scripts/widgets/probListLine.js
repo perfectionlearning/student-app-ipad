@@ -379,7 +379,15 @@ framework.widget.probListLine = function()
 	//=======================================================
 	function clickHandler()
 	{
-		that.click && that.click(that.number);
+		app.loadingBox();
+
+		window.setTimeout(deliverClick(that),0);
+	}
+
+
+	function deliverClick(thatobj)
+	{
+		thatobj.click && thatobj.click(thatobj.number);
 	}
 
 	//=======================================================
