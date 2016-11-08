@@ -388,7 +388,8 @@ framework.widget.graphPlotInput = function()
 		// This is ugly, but not as bad as above.
 		// It knows too much about DOM elements, but doesn't know about parents and coordinate systems.
 		var pos = graph.canvas.getBoundingClientRect();
-		graph.mouseClick(ev.pageX - pos.left, ev.pageY - pos.top);
+		var offsets = { x: window.pageXOffset, y: window.pageYOffset };
+		graph.mouseClick(ev.pageX - offsets.x - pos.left, ev.pageY - offsets.y - pos.top);
 	}
 
 	//=======================================================
