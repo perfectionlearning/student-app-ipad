@@ -156,8 +156,8 @@
 
 			// Show solution and final status at end of steps (for iPad)
 			stepWid.allSteps();
-			var msgObj = app.scoring.getMsgObj(problem.get('origStatus'), 'LastStep');
-			stepWid.showText(msgObj.text, msgObj.color);
+//			var msgObj = app.scoring.getMsgObj(problem.get('origStatus'), 'LastStep');
+//			stepWid.showText(msgObj.text, msgObj.color);
 
 			// Transition
 			doTransition(stepWid, true);
@@ -176,8 +176,8 @@
 
 		// Show solution and final status at end of steps (for iPad)
 		stepWid.allSteps();
-		var msgObj = app.scoring.getMsgObj(problem.get('origStatus'), 'LastStep');
-		stepWid.showText(msgObj.text, msgObj.color);
+//		var msgObj = app.scoring.getMsgObj(problem.get('origStatus'), 'LastStep');
+//		stepWid.showText(msgObj.text, msgObj.color);
 
 		// MathJaxed items are already visible, so this looks weird
 //		stepWid.fadeIn(1500);
