@@ -501,6 +501,9 @@ console.log('orientationNotice', window.orientation);
 			at: 'top left'
 		});
 	}
+	if (window.orientation === undefined) {
+		wid.close();
+	}
 	if (Math.abs(window.orientation) === 90) {
 		wid.close();
 	}

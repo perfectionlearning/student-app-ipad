@@ -87,7 +87,7 @@
 				dock: 'stage',
 				my: 'top left',
 				at: 'top left',
-				ofs: '42 10'
+				ofs: '65 10'
 			},
 
 			navSlider: {
@@ -678,7 +678,7 @@
 
 			prefs: {
 				dock: {
-					top: 'stage top 48',
+					top: 'stage top 72',
 					bottom: 'stage bottom -32',
 					left: 'stage left 29',
 					right: 'stage right -29'
@@ -735,7 +735,7 @@
 
 			backdrop: {
 				dock: {
-					top: 'stage top 48',
+					top: 'stage top 72',
 					bottom: 'stage bottom -32',
 					left: 'stage left 0',
 					right: 'stage right 0'
@@ -744,7 +744,7 @@
 
 			assignmentList: {
 				dock: {
-					top: 'backdrop top 23',
+					top: 'backdrop top 0',
 					bottom: 'backdrop bottom -25',
 					left: 'backdrop left 0',
 					right: 'backdrop right 0'
@@ -1111,7 +1111,7 @@
 
 			backdrop: {
 				dock: {
-					top: 'stage top 48',
+					top: 'stage top 72',
 					bottom: 'stage bottom -32',
 					left: 'stage left 30',
 					right: 'stage right -30'
