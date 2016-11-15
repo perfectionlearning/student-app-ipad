@@ -121,7 +121,7 @@
 			qFont: '24px/28px Trebuchet MS',	// Prefix and suffix
 			maxPrePostWidth: 40,
 
-			font: '20px Times',	// For text buttons
+			font: '18px Times',	// For text buttons
 			color: 'black'		// For text buttons
 		},
 
