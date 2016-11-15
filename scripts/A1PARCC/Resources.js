@@ -32,7 +32,8 @@
 		WBShadowB: {path:PATH + "WB_Shadow_Bottom.png"},
 		WBShadowL: {path:PATH + "WB_Shadow_Left.png"},
 		WBShadowR: {path:PATH + "WB_Shadow_Right.png"},
-		WVStepLine:  {path:PATH + "WVStepLine.png"}
+		WVStepLine:  {path:PATH + "WVStepLine.png"},
+		Rotate:  {path:PATH + "Rotate.png"}
 
 	},
 

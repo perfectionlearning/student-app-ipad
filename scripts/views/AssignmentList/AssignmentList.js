@@ -9,6 +9,7 @@
 	// Initialize the page
 	//=======================================================
 	vw.init = function(container) {
+		app.orientationNotice();
 		fw.setLayout('AssignmentList');
 
 		fw.eventSubscribe('allAssignments:click', allAssignments);

@@ -412,6 +412,15 @@ $(function() {
 	}
 
 	//=======================================================
+	// Detect orientation from landscape to portrait.
+	//=======================================================
+	function orientationChangeDetect() {
+		window.addEventListener('orientationchange', function() {
+			app.orientationNotice();
+		});
+	}
+
+	//=======================================================
 	// MAIN ENTRY POINT
 	//=======================================================
 	document.kbHideChromebar && document.kbHideChromebar();
@@ -457,6 +466,8 @@ $(function() {
 
 	app.container = app.createContainer(topContainer, 'Stage');
 	fw.setContainer(app.container);		// Pass the container into the graphics module
+	orientationChangeDetect(); // to detect shift from landscape to portrait on tablet device.
+
 	app.loadingBox();
 
 });		// End of onload()
@@ -466,6 +477,33 @@ $(function() {
 //=====================================================================================
 // @FIXME/dg: MOVE THESE ELSEWHERE!
 //=====================================================================================
+
+//=======================================================
+// Create a notice for use if portrait mode is detected.
+//=======================================================
+app.orientationNotice = function()
+{
+	// Detect existing instance of the loading popup
+	var wid = fw.getWidget('orientation', true);
+
+	if (!wid) {
+		var wid = fw.createWidget('orientation', {
+			id: 'orientation',
+			borderColor: 'black',
+			borderWidth: 2,
+			boxHPad: 0,
+			boxVPad: 0
+
+		},{
+			wid: 'stage',
+			my: 'top left',
+			at: 'top left'
+		});
+	}
+	if (window.orientation === 90) {
+		wid.close();
+	}
+}
 
 //=======================================================
 // Create a 'loading' box during problem set loads
