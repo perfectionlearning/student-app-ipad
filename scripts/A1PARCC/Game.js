@@ -483,6 +483,7 @@ $(function() {
 //=======================================================
 app.orientationNotice = function()
 {
+console.log('orientationNotice', window.orientation);
 	// Detect existing instance of the loading popup
 	var wid = fw.getWidget('orientation', true);
 
@@ -500,7 +501,7 @@ app.orientationNotice = function()
 			at: 'top left'
 		});
 	}
-	if (window.orientation === 90) {
+	if (Math.abs(window.orientation) === 90) {
 		wid.close();
 	}
 }
