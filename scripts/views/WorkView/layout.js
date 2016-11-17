@@ -396,7 +396,7 @@
 	//=======================================================
 	function initKeypad()
 	{
-			if (layout.qType === 'essay' || layout.qType === 'graphPlot')
+			if (layout.qType === 'radio' || layout.qType === 'check' || layout.qType === 'essay' || layout.qType === 'graphPlot')
 				drawList.setParam('keypad', 'hidden', true);
 			else // if(layout.qType === 'graphConst') RT: not sure why this restriction was needed. Why not just display the keypad if the type isn't one of the above?
 				drawList.setParam('keypad', 'hidden', false);
