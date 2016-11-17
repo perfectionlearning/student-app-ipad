@@ -118,7 +118,7 @@
 //			h: '//mathx.kineticmath.com/rest.php/',
 //			u: '//ohw.kineticmath.com/rest/rest.php/',
 			u: '//api.kineticmath.com/rest/rest.php/',
-			hw: '//ohw.kineticmath.com/Assignments',
+			hw: '//ohw.kineticmath.com/assignments/list',
 			g: '//mathx.kineticmath.com/gradebook.php',
 			gr: '//mathx.kineticmath.com/class_report.php',
 			ad: '//mathx.kineticmath.com/admin.php',
