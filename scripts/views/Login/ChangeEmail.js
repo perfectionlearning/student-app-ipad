@@ -7,9 +7,9 @@
 
 	var errorCodes = {
 		0: "Unable to connect to the server.",
-		401: "That doesn't appear to be a valid email address.",
+		401: "That doesn't appear to be a valid username.",
 		403: "Incorrect username or password.",
-		409: "An account already exists for that email address."
+		409: "An account already exists for that username."
 	};
 
 	//=======================================================
@@ -83,7 +83,7 @@
 		if (fields[2] !== fields[3])
 			return {
 				isValid: false,
-				error: "The two email fields don't match."
+				error: "The two username don't match."
 			}
 
 		return {
@@ -101,7 +101,7 @@
 			w: 445,			// @FIXME/dg
 
 			title: 'Success!',
-			infoText: "Your email address has been changed. Click below to return to the book.",
+			infoText: "Your username has been changed.",
 			buttons: [
 				{image: 'LoginBtn', frame: 'OK', type: 'OK', click: moveOn}
 			],
@@ -137,7 +137,7 @@
 
 		title: [
 			'title', 'text', {
-				text: 'Change Email',
+				text: 'Change Username',
 				font: 'bold 27px Arial',	// @FIXME/dg: Move to style
 				color: '#0051C1'
 			}
@@ -147,12 +147,12 @@
 			'login', 'form', {
 				w: 445,			// @FIXME/dg
 
-				title: 'Use this form to change your email address.',
+				title: 'Use this form to change your username.',
 				fields: [
-					{label: 'Old Email or Username'},
+					{label: 'Old Username'},
 					{label: 'Password', type: 'pw'},
-					{label: 'New Email Address'},
-					{label: 'Confirm Email', validate: emailMatch},
+					{label: 'New Username'},
+					{label: 'Confirm Username', validate: emailMatch},
 				],
 				buttons: [
 					{image: 'LoginBtn', frame: 'Change', type: 'OK', click: doLogin}

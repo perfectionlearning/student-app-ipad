@@ -1,4 +1,4 @@
 if (typeof app === "undefined") app = {};
 app.majorVersion = 1;
-app.minorVersion = 88;
-app.date = '11/14/2016';
+app.minorVersion = 92;
+app.date = '11/16/2016';
