@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+<title>Perfection Learning</title>
+
+<link rel="stylesheet" href="css/mathquill.css" />
+<link rel="stylesheet" href="css/worksheet.css" />
+<link rel="shortcut icon" href="images/favicon.ico" />
+<script src="scripts/lib/jquery-2.1.0.min.js"></script>
+<script src="scripts/lib/underscore-1.5.1.min.js"></script>
+<script src="scripts/lib/backbone-1.0.0.js"></script>
+<script src="scripts/lib/mathquill.js"></script>
+<script src="scripts/lib/xml-lib.js"></script>
+<script src="scripts/lib/LaTeXToMathML.js"></script>
+
+	<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+				"HTML-CSS": {
+					availableFonts: [],
+					preferredFont: null, // force Web fonts
+					webFont: "STIX-Web",
+					matchFontHeight: false
+				},
+
+				skipStartupTypeset: true
+			});
+
+	</script>
+	<script src="//cdn.mathjax.org/mathjax/2.3-latest/MathJax.js?config=MML_HTMLorMML-full.js"></script>
+<!--	<script src="lib/MathJax/MathJax.js?config=MML_HTMLorMML-full.js"></script> -->
+        <script src="dist/scripts.js"></script>
+</head>
+
+<body>
+<div id="Worksheet"></div>
+</body>
+
+</html>
