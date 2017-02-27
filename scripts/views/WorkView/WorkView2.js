@@ -55,8 +55,12 @@
 		// Init the problem
 		initProblem();
 
-		var routeString = app.modes.formatRoute(app.curAssign, probId);
-		routeString && app.router.navigate(routeString);
+		if (app.directProblemRoute) {
+			app.router.navigate(app.directProblemRoute);
+		} else {
+			var routeString = app.modes.formatRoute(app.curAssign, probId);
+			routeString && app.router.navigate(routeString);
+		}
 	}
 
 	//=======================================================
