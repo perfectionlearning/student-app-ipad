@@ -21,6 +21,7 @@
   "homepage": "https://github.com/perfectionlearning/student-app#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.1"
+    "gulp-concat": "^2.6.1",
+    "gulp-minify": "0.0.15"
   }
 }
