@@ -14,6 +14,7 @@
 
 		//%?USER_LEVEL=none%		// Only teachers can use admin
 		{ t:'Grades', icon: 'Graph', act: app.grades },
+		//?%
 
 		//%?USER_LEVEL=student%		// Only students have access to Settings right now
 		{ t:'Classes', icon: 'LPTOC', act: app.classes },

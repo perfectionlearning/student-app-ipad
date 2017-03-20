@@ -60,7 +60,7 @@ var getDict = function() {
 		RoundedBR: { name: 'RoundedBR'},
 
 		eqInputBackground: { name: 'eqInputBG' },
-		eqInputSingle: { name: 'eqInputSingle', frameData: { frames: 60, abs: 0, power: 2, le: 4, ge: 6, notEqual: 8, sqrt: 10, nthRoot: 12, pi: 14, sigma: 16, and: 18, or: 20, fraction: 22, infinity: 24, plusMinus: 26, blank: 28, one: 30, two: 32, three: 34, four: 36, five: 38, six: 40, seven: 42, eight: 44, nine: 46, zero: 48, paren: 50, minus: 52, xvar: 54, yvar: 56, plus: 58 } },
+		eqInputSingle: { name: 'eqInputSingle', frameData: { frames: 30, abs: 0, power: 2, le: 4, ge: 6, notEqual: 8, sqrt: 10, nthRoot: 12, pi: 14, sigma: 16, and: 18, or: 20, fraction: 22, infinity: 24, plusMinus: 26, blank: 28 } },
 		eqInputDouble: { name: 'eqInputDouble', frameData: { frames: 10, infAnswers: 0, noAnswers: 2, logBase: 4, more: 6, blank: 8 } },
 
 		aTypeIcons: {name: 'aTypeIcons', frameData: {frames: 10, graph: 0, equation: 1, freeInput: 2, multChoice: 3, multiPart: 5, paper: 7}},

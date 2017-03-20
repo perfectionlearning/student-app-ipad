@@ -55,6 +55,7 @@
 	var Router = Backbone.Router.extend({
 		routes: {
 			'prob/:pspid': 'ohwProblem',
+			'assignprob/:id/:pspid': 'assignProb',
 			'probid/:id': 'probId',
 			'prefs': 'prefs',
 			'assignments': 'assignments',
@@ -76,6 +77,14 @@
 		//-----------------------
 		prefs: function() {
 			app.initAndJump('prefsPage');
+		},
+
+		//-----------------------
+		//-----------------------
+		assignProb: function(id, probId) {
+			app.curAssign = id;
+			app.directProblem = probId;
+			app.initAndJump('probList');
 		},
 
 		//-----------------------

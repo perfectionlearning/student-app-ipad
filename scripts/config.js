@@ -67,7 +67,7 @@
 	// Server environment
 	//=======================================
 	//REMOVEME: /*
-	app.server = 'mariasdb';			// We need this. It's used in the version string.
+	app.server = 'testdb';			// We need this. It's used in the version string.
 	//REMOVEME: */
 	//REMOVEME: app.server = '%%BACKEND_SERVER%%';	// Filled in by the deploy process
 
@@ -89,7 +89,7 @@
 		//%?BACKEND_SERVER=rickdb%
 		rickdb: {
 			h: '//rtoews-hw-bachelor.kbooks.local/ohw/rest/rest.php/',
-			u: '//rtoews-hw-bachelor.kbooks.local/ohw/login_rest/',
+			u: '//rtoews-hw-bachelor.kbooks.local/ohw/rest/rest.php/',
 			hw: '//rtoews-hw-bachelor.kbooks.local/syllabus.php',
 			g: '//rtoews-hw-bachelor.kbooks.local/gradebook.php',
 			gr: '//rtoews-hw-bachelor.kbooks.local/class_report.php',
@@ -98,24 +98,12 @@
 		},
 		//?%
 
-		//%?BACKEND_SERVER=dagandb%
-		dagandb: {
-			h: '//dgalarneau-hw-bachelor.kbooks.local/ohw/rest/rest.php/',
-			u: '//dgalarneau-hw-bachelor.kbooks.local/ohw/login_rest/',
-			hw: '//dgalarneau-hw-bachelor.kbooks.local/syllabus.php',
-			g: '//dgalarneau-hw-bachelor.kbooks.local/gradebook.php',
-			gr: '//dgalarneau-hw-bachelor.kbooks.local/class_report.php',
-			ad: '//dgalarneau-hw-bachelor.kbooks.local/admin.php',
-			lo: '//dgalarneau-hw-bachelor.kbooks.local/logout.php/'
-		},
-		//?%
-
 		//%?BACKEND_SERVER=testdb%
 		testdb: {
 			h: '//test-ohw.kineticmath.com/rest/rest.php/',
 //			h: '//alghwstaging.kineticmath.com/rest.php/',
 			u: '//test-ohw.kineticmath.com/rest/rest.php/',
-			hw: '//test-ohw.kineticmath.com/Assignments',
+			hw: '//qa1.kineticmath.com/assignments/list',
 			g: '//alghwstaging.kineticmath.com/gradebook.php',
 			gr: '//alghwstaging.kineticmath.com/class_report.php',
 			ad: '//alghwstaging.kineticmath.com/admin.php',
@@ -125,25 +113,31 @@
 
 		//%?BACKEND_SERVER=livedb%
 		livedb: {
-			h: '//ohw.kineticmath.com/rest/rest.php/',
+			h: '//api.kineticmath.com/rest/rest.php/',
+//			h: '//ohw.kineticmath.com/rest/rest.php/',
 //			h: '//mathx.kineticmath.com/rest.php/',
-			u: '//ohw.kineticmath.com/rest/rest.php/',
-			hw: '//ohw.kineticmath.com/Assignments',
+//			u: '//ohw.kineticmath.com/rest/rest.php/',
+			u: '//api.kineticmath.com/rest/rest.php/',
+			hw: '//ohw.kineticmath.com/assignments/list',
 			g: '//mathx.kineticmath.com/gradebook.php',
 			gr: '//mathx.kineticmath.com/class_report.php',
 			ad: '//mathx.kineticmath.com/admin.php',
-			lo: '//ohw.kineticmath.com/rest/rest.php/users/logout'
+			lo: '//api.kineticmath.com/rest/rest.php/users/logout'
 		}
 		//?%
+
 	};
 
 	var en = paths[app.server];
 	var commRoot = en.h;
+	var endpointRoot = en.h.replace(/rest\.php/, 'endpoint.php');
 
 	app.loginPath = en.u + 'users/login';
 
 	// @DEPLOY: It would be nice to set this conditionally, but it's not critical
 	app.assignListPath = (app.server === 'mariasdb') ? (commRoot + 'assigns/book/' + app.book_id) : (commRoot + 'assigns');
+
+	app.assignPath = endpointRoot + 'assign/';
 
 	app.pSetPath = commRoot + 'pset/';
 	app.qcServer = commRoot + "problems/";
@@ -152,7 +146,7 @@
 	app.classListPath = commRoot + 'courses';
 	app.classSelectPath = commRoot + 'courses/select';
 	app.studentGradesPath = commRoot + 'grades/';
-	
+
 	app.paths.homework = en.hw;		// Homework link
 	app.paths.grades = en.g;		// Gradebook link
 	app.paths.graphs = en.gr;		// Graphs link

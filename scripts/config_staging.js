@@ -103,7 +103,7 @@
 			h: '//test-ohw.kineticmath.com/rest/rest.php/',
 //			h: '//alghwstaging.kineticmath.com/rest.php/',
 			u: '//test-ohw.kineticmath.com/rest/rest.php/',
-			hw: '//qa2.kineticmath.com/assignments/list',
+			hw: '//qa1.kineticmath.com/assignments/list',
 			g: '//alghwstaging.kineticmath.com/gradebook.php',
 			gr: '//alghwstaging.kineticmath.com/class_report.php',
 			ad: '//alghwstaging.kineticmath.com/admin.php',
@@ -118,11 +118,11 @@
 //			h: '//mathx.kineticmath.com/rest.php/',
 //			u: '//ohw.kineticmath.com/rest/rest.php/',
 			u: '//api.kineticmath.com/rest/rest.php/',
-			hw: '//ohw.kineticmath.com/Assignments',
+			hw: '//ohw.kineticmath.com/assignments/list',
 			g: '//mathx.kineticmath.com/gradebook.php',
 			gr: '//mathx.kineticmath.com/class_report.php',
 			ad: '//mathx.kineticmath.com/admin.php',
-			lo: '//ohw.kineticmath.com/rest/rest.php/users/logout'
+			lo: '//api.kineticmath.com/rest/rest.php/users/logout'
 		}
 		//?%
 
