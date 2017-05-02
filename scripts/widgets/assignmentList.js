@@ -152,7 +152,8 @@ framework.widget.assignmentList = function()
 	//=======================================================
 	function noFilter(record, idx)
 	{
-		return (record.get('type') !== 'quickcheck');
+//		return (record.get('type') !== 'quickcheck');
+		return true;
 	}
 
 	//=======================================================
