@@ -3107,9 +3107,11 @@ LatexCmds.image = LatexCmds.imagin = LatexCmds.imaginary = LatexCmds.Imaginary =
 
 LatexCmds.part = LatexCmds.partial = bind(VanillaSymbol,'\\partial ','&part;');
 
-LatexCmds.inf = LatexCmds.infin = LatexCmds.infty = LatexCmds.infinity =
-//  bind(VanillaSymbol,'\\infty ','&infin;');
+LatexCmds.infinity =
   bind(VanillaSymbol,'\\infty ','infinite solutions');	// DG: Changed to text.
+
+LatexCmds.inf = LatexCmds.infin = LatexCmds.infty =
+  bind(VanillaSymbol,'\\infty ','&infin;');  // RT: Separate "infinite solutions" from infinity symbol.
 
 LatexCmds.alef = LatexCmds.alefsym = LatexCmds.aleph = LatexCmds.alephsym =
   bind(VanillaSymbol,'\\aleph ','&alefsym;');
