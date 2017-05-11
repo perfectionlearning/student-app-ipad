@@ -309,7 +309,7 @@
 			// @FIXME/dg: Combine them all into a table! This is messy!
 			var fixInf = /<mo>\u221E<\/mo>/g;
 			var fixNone = /<mo>\u2205<\/mo>/g;
-			data.a = data.a.replace(fixInf, '<mtext>&nbsp;infinite&nbsp;solutions&nbsp;</mtext>');
+			// data.a = data.a.replace(fixInf, '<mtext>&nbsp;infinite&nbsp;solutions&nbsp;</mtext>');
 			data.a = data.a.replace(fixNone, '<mtext>&nbsp;no&nbsp;solutions&nbsp;</mtext>');
 		}
 	}
