@@ -170,13 +170,14 @@
 	//=======================================================
 	//
 	//=======================================================
+	var ltgt = {'<': '&lt;', '>': '&gt;'};
 	framework.prototype.eqAllowInput = function(el)
 	{
 		if (fw.verifyObject(el, 'EQ Allowing input for'))
 		{
 			var data = el.mathquill('latex');
 			// Replace < and > in input with &lt; and &gt;. This is to fix a truncation issue when < was used in answer.
-			data = data.replace(/[<>]/g, (s) => { return {'<':'&lt;', '>':'&gt;'}[s]; }); 
+			data = data.replace(/[<>]/g, function(s) { return ltgt[s]; }); 
 			el.mathquill('revert').html(data).mathquill('editable');
 		}
 	}
