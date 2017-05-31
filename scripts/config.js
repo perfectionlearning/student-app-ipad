@@ -100,14 +100,16 @@
 
 		//%?BACKEND_SERVER=testdb%
 		testdb: {
-			h: '//test-ohw.kineticmath.com/rest/rest.php/',
-//			h: '//alghwstaging.kineticmath.com/rest.php/',
-			u: '//test-ohw.kineticmath.com/rest/rest.php/',
+			h: '//qa1.perfectionlearning.com/api/rest/',
+//			h: '//test-ohw.kineticmath.com/rest/rest.php/',
+			u: '//qa1.perfectionlearning.com/api/rest/',
+//			u: '//test-ohw.kineticmath.com/rest/rest.php/',
 			hw: '//qa1.kineticmath.com/assignments/list',
 			g: '//alghwstaging.kineticmath.com/gradebook.php',
 			gr: '//alghwstaging.kineticmath.com/class_report.php',
 			ad: '//alghwstaging.kineticmath.com/admin.php',
-			lo: '//test-ohw.kineticmath.com/rest/rest.php/users/logout'
+			lo: '//qa1.perfectionlearning.com/api/rest/users/logout'
+//			lo: '//test-ohw.kineticmath.com/rest/rest.php/users/logout'
 		},
 		//?%
 
