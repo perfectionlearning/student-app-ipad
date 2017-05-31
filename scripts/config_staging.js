@@ -115,16 +115,17 @@
 
 		//%?BACKEND_SERVER=livedb%
 		livedb: {
-			h: '//api.kineticmath.com/rest/rest.php/',
-//			h: '//ohw.kineticmath.com/rest/rest.php/',
-//			h: '//mathx.kineticmath.com/rest.php/',
-//			u: '//ohw.kineticmath.com/rest/rest.php/',
-			u: '//api.kineticmath.com/rest/rest.php/',
-			hw: '//ohw.kineticmath.com/assignments/list',
+			h: '//ohw.perfectionlearning.com/api/rest/',
+//			h: '//api.kineticmath.com/rest/rest.php/',
+			u: '//ohw.perfectionlearning.com/api/rest/',
+//			u: '//api.kineticmath.com/rest/rest.php/',
+			hw: '//ohw.perfectionlearning.com/assignments/list',
+//			hw: '//ohw.kineticmath.com/assignments/list',
 			g: '//mathx.kineticmath.com/gradebook.php',
 			gr: '//mathx.kineticmath.com/class_report.php',
 			ad: '//mathx.kineticmath.com/admin.php',
-			lo: '//api.kineticmath.com/rest/rest.php/users/logout'
+//			lo: '//api.kineticmath.com/rest/rest.php/users/logout',
+			lo: '//ohw.perfectionlearning.com/api/rest/users/logout'
 		}
 		//?%
 
