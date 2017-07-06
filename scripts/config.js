@@ -109,6 +109,7 @@
 			g: '//alghwstaging.kineticmath.com/gradebook.php',
 			gr: '//alghwstaging.kineticmath.com/class_report.php',
 			ad: '//alghwstaging.kineticmath.com/admin.php',
+			bk: '//qa1.perfectionlearning.com/book/content/fpp/Chapter', // to Mitr book
 			lo: '//qa1.perfectionlearning.com/api/rest/users/logout'
 //			lo: '//test-ohw.kineticmath.com/rest/rest.php/users/logout'
 		},
@@ -125,6 +126,7 @@
 			g: '//mathx.kineticmath.com/gradebook.php',
 			gr: '//mathx.kineticmath.com/class_report.php',
 			ad: '//mathx.kineticmath.com/admin.php',
+			bk: '//ohw.perfectionlearning.com/book/content/fpp/Chapter', // to Mitr book
 //			lo: '//api.kineticmath.com/rest/rest.php/users/logout',
 			lo: '//ohw.perfectionlearning.com/api/rest/users/logout'
 		}
@@ -151,6 +153,7 @@
 	app.classSelectPath = commRoot + 'courses/select';
 	app.studentGradesPath = commRoot + 'grades/';
 
+	app.paths.book = en.bk;
 	app.paths.homework = en.hw;		// Homework link
 	app.paths.grades = en.g;		// Gradebook link
 	app.paths.graphs = en.gr;		// Graphs link

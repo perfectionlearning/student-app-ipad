@@ -37,6 +37,21 @@
 		//?%
 	]
 
+	app.classList.fetch().done((result) => {
+		console.log('checking for Mitr Book.', result);
+		var hasFpp = result.filter && result.filter((item) => { return item.product === 'fpp'; }).length;
+		var hasMathX = result.filter && result.filter((item) => { return item.product === 'mathx'; }).length;
+		if (hasFpp) {
+			var bookItem = { t:'Book', icon: 'FactBook', act: app.book };
+			menu.unshift(bookItem);
+console.log('Added Mitr Book to menu.');
+		}
+		if (hasMathX) {
+			app.hasMathX = true;
+console.log('Should show MathX logo.');
+		}
+	});
+
 	//-------------------------------------------------------
 	// Menu slideout
 	//-------------------------------------------------------
