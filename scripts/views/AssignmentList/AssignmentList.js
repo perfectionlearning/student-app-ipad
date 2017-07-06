@@ -18,6 +18,11 @@
 		vw.drawList = fw.drawList(app.addToArray(app.globalDrawList({noNav: true}), drawList));
 		vw.drawList.setParam('assignmentList', 'collection', app.assignments);
 
+		// Remove MathX logo if no MathX product.
+		if (!app.hasMathX) {
+			delete vw.drawList.banner;
+		}
+
 		loadAssignmentList();
 		app.router.navigate('assignments');
 	}
