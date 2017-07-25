@@ -118,6 +118,7 @@
 	//=======================================================
 	// Collection
 	//=======================================================
+	var omitTypes = ['quickcheck', 'quizboard', 'virtual lab'];
 	app.AssignmentList = Backbone.Collection.extend({
 		model: app.Assignment,
 		url: app.assignListPath,
@@ -127,7 +128,9 @@
 			var out = [];
 
 			response && $.each(response, function(key, val) {
-				out.push(val);
+				if (omitTypes.indexOf(val.type) === -1) {
+					out.push(val);
+				}
 			});
 
 			return out;
