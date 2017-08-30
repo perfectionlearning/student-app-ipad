@@ -7,7 +7,7 @@
 
 	var errorCodes = {
 		0: "Unable to connect to the server.",
-		403: "That doesn't appear to be a valid username.",
+		403: "That doesn't appear to be a valid email address.",
 		412: "Unable to reset the password for that address. Please contact customer support for help."
 	};
 
@@ -130,7 +130,7 @@
 			'login', 'form', {
 				w: 455,			// @FIXME/dg
 
-				title: 'Enter your username to reset your password.',
+				title: 'Enter your email address to reset your password.',
 				fields: [
 					{label: 'Email address'},
 				],
@@ -144,7 +144,7 @@
 
 		instruct: [
 			'instruct', 'text', {
-				text: "<b>Note:</b> You must have an username associated with your account to reset your password.  If you don't, please see your teacher for assistance.",
+				text: "<b>Note:</b> You must have an email address associated with your account to reset your password.  If you don't, please see your teacher for assistance.",
 				font: '16px Arial',
 				color: 'black'
 			}

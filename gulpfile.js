@@ -3,6 +3,8 @@ var _ = require('lodash');
 var concat = require('gulp-concat');
 var minify = require('gulp-minify');
 var jsFiles = require('./deploy/js-files');
+var ipadFiles = require('./deploy/ipad-files');
+//var buildFileList = require('./deploy/build-file-list');
 var appProcess = require('./deploy/student-app-process.js');
 
 var jsDest = './dist';
@@ -16,6 +18,18 @@ var config = {
         out_dir: 'studenttest',
         user_type: 'student',
         environment: 'online',
+        server: 'testdb'
+    },
+
+//--------------------------------------
+// DEPLOY: Student iPad, Online, Test
+//--------------------------------------
+    'student-ipad-test': {
+        title: 'Student, iPad, Online, Test',
+        out_dir: 'student-ipad-test',
+        user_type: 'student',
+        environment: 'online',
+        browser: 'ipad',
         server: 'testdb'
     },
 
@@ -42,6 +56,18 @@ var config = {
     },
 
 //--------------------------------------
+// DEPLOY: Student, iPad, Online, Live
+//--------------------------------------
+    'student-ipad-live': {
+        title: 'Student, iPad, Online, Live',
+        out_dir: 'student-ipad-live',
+        user_type: 'student',
+        environment: 'online',
+        browser: 'ipad',
+        server: 'livedb'
+    },
+
+//--------------------------------------
 // DEPLOY: Teacher, Online, Live
 //--------------------------------------
     'teacher-live': {
@@ -59,12 +85,23 @@ _.each(config, (cfg, key) => {
             'BACKEND_SERVER': config[key].server,
             'USER_LEVEL': config[key].user_type
         };
-        return gulp.src(jsFiles.list)
-            .pipe(concat(key + '.js'))
-            .pipe(appProcess.replaceVars(config[key].user_type, deploy_var_list))
-            .pipe(minify({ext: { src: '-debug.js', min: '.js' }}))
-            .pipe(gulp.dest(jsDest))
-        ;
+        if (cfg.browser && cfg.browser === 'ipad') {
+//			return buildFileList.getList().then((ipadFiles) => {
+				return gulp.src(ipadFiles.list)
+	                .pipe(concat(key + '.js'))
+	                .pipe(appProcess.replaceVars(config[key].user_type, deploy_var_list))
+	                .pipe(minify({ext: { src: '-debug.js', min: '.js' }}))
+	                .pipe(gulp.dest(jsDest))
+	            ;
+//			});
+        } else {
+            return gulp.src(jsFiles.list)
+                .pipe(concat(key + '.js'))
+                .pipe(appProcess.replaceVars(config[key].user_type, deploy_var_list))
+                .pipe(minify({ext: { src: '-debug.js', min: '.js' }}))
+                .pipe(gulp.dest(jsDest))
+            ;
+        }
     });
 });
 

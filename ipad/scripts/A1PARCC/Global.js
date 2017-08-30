@@ -35,7 +35,20 @@
 		//%?USER_LEVEL=student%		// Only students can log out. It causes issues in AMSCO A1.
 		{ t:'Logout', icon: 'Logout', act: app.logout }
 		//?%
-	]
+	];
+
+	app.classList.fetch().done(function(result) {
+		console.log('checking for Mitr Book.', result);
+		var hasFpp = result.filter && result.filter(function(item) { return item.product === 'fpp'; }).length;
+		var hasMathX = result.filter && result.filter(function(item) { return item.product === 'mathx'; }).length;
+		if (hasFpp) {
+			var bookItem = { t:'Book', icon: 'FactBook', act: app.book };
+			menu.unshift(bookItem);
+		}
+		if (hasMathX) {
+			app.hasMathX = true;
+		}
+	});
 
 	//-------------------------------------------------------
 	// Menu slideout

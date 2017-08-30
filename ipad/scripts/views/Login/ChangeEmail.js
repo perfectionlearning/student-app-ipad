@@ -83,7 +83,7 @@
 		if (fields[2] !== fields[3])
 			return {
 				isValid: false,
-				error: "The two email fields don't match."
+				error: "The two username don't match."
 			}
 
 		return {

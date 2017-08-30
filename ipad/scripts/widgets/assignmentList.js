@@ -117,19 +117,19 @@ framework.widget.assignmentList = function()
 	//=======================================================
 	function setRefDates(firstModel)
 	{
-		var re = /^(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})/;
+			var re = /^(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})/;
 			var servertime = firstModel.get('servertime') || new Date();
 			var todayStr = servertime.toString();
-		var match = todayStr.match(re);
-		var today = new Date();
-		var offsetMs = today.getTimezoneOffset() * 60 * 1000;
+			var match = todayStr.match(re);
+			var today = new Date();
+			var offsetMs = today.getTimezoneOffset() * 60 * 1000;
 			if (match) {
-		today.setFullYear(match[1]);
-		today.setMonth(match[2]-1);
-		today.setDate(match[3]);
-		today.setHours(match[4]);
-		today.setMinutes(match[5]);
-		today.setSeconds(match[6]);
+					today.setFullYear(match[1]);
+					today.setMonth(match[2]-1);
+					today.setDate(match[3]);
+					today.setHours(match[4]);
+					today.setMinutes(match[5]);
+					today.setSeconds(match[6]);
 			}
 			else {
 					today.setFullYear(servertime.getFullYear());
@@ -140,11 +140,11 @@ framework.widget.assignmentList = function()
 					today.setSeconds(servertime.getSeconds());
 			}
 
-		todayMs = Date.parse(today.toString());	// Server time (GMT) in milliseconds (since 1980 or somesuch).
-		todayMs -= offsetMs;					// DG: Convert to local time, since that is what we compare against.
+			todayMs = Date.parse(today.toString()); // Server time (GMT) in milliseconds (since 1980 or somesuch).
+			todayMs -= offsetMs;                    // DG: Convert to local time, since that is what we compare against.
 
-		currentCutoff = todayMs + daysMs(FILTER_CURRENT_DAYS);
-		gradedCutoff = todayMs - daysMs(FILTER_GRADED_DAYS);
+			currentCutoff = todayMs + daysMs(FILTER_CURRENT_DAYS);
+			gradedCutoff = todayMs - daysMs(FILTER_GRADED_DAYS);
 	}
 
 	//=======================================================
@@ -152,7 +152,8 @@ framework.widget.assignmentList = function()
 	//=======================================================
 	function noFilter(record, idx)
 	{
-		return (record.get('type') !== 'quickcheck');
+//		return (record.get('type') !== 'quickcheck');
+		return true;
 	}
 
 	//=======================================================
@@ -262,8 +263,6 @@ framework.widget.assignmentList = function()
 			left: that.id + ' left',
 			right: that.id + ' right -' + style.rightMargin
 		});
-
-		
 
 		// Add a shadow border
 		// that.add('border8', {

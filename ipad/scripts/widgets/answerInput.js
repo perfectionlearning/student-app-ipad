@@ -39,7 +39,7 @@ framework.widget.answerInput = function()
 		that.hidden = true;
 
 	that.noButtons = (that.type === 'multiPart');
-
+	
 	var MC_RIGHT_BUFFER = 110; // Adjust right buffer for multiple choice, to give space for buttons.
 
 	//=======================================================
@@ -149,14 +149,14 @@ framework.widget.answerInput = function()
 		else
 			input.show();
 	}
-
+	
 	//=======================================================
 	// Bring multiple choice items out of hiding.
 	//=======================================================
 	function showMc() {
 		input.show();
 	}
-
+	
 	//=======================================================
 	// Create an input widget stand-in.  It's much easier than
 	// trying to deal with no input later on.
@@ -277,7 +277,6 @@ framework.widget.answerInput = function()
 		// Determine whether to use 'below' or 'right' layout options
 		var w = buttons.width() < style.minButtonWidth ? style.minButtonWidth : buttons.width();
 		var iw = input.width();	// Might be smaller than that.w
-		
 		if (defined(that.maxWidth) && ((iw + w) <= that.maxWidth))
 			buttonPos = 'right';
 		else

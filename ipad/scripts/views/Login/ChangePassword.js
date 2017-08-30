@@ -117,7 +117,7 @@
 			w: 400,			// @FIXME/dg
 
 			title: 'Success!',
-			infoText: "Your password has been changed.",
+			infoText: "Your password has been changed. Click below to return to the book.",
 			buttons: [
 				{image: 'LoginBtn', frame: 'OK', type: 'OK', click: moveOn}
 			],

@@ -36,6 +36,10 @@
 
 		// Set the drawlist
 		vw.drawList = fw.drawList(app.addToArray(app.globalDrawList({noNav: true}), drawList));
+		// Remove MathX logo if no MathX product.
+		if (!app.hasMathX) {
+			delete vw.drawList.Logo;
+		}
 
 		// Select the layout
 		fw.setLayout('Classes');

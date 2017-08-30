@@ -58,8 +58,12 @@
 		// Init the problem
 		initProblem();
 
-		var routeString = app.modes.formatRoute(app.curAssign, probId);
-		routeString && app.router.navigate(routeString);
+		if (app.directProblemRoute) {
+			app.router.navigate(app.directProblemRoute);
+		} else {
+			var routeString = app.modes.formatRoute(app.curAssign, probId);
+			routeString && app.router.navigate(routeString);
+		}
 	}
 
 	//=======================================================
@@ -137,8 +141,8 @@
 		// Init any modules that require it
 		view.initFocusManager();
 		view.stepModuleInit(problem);
-		view.initHelp(problem);	
-	
+		view.initHelp(problem);
+
 		// Open steps if required -- move to an answerType-based plugin system!
 		modeSpecific();
 
@@ -552,7 +556,7 @@
 	{
 		app.loadingBox();
 		// Clear the ID, forcing a reload
-		//		problem.set({chID: ''});
+//		problem.set({chID: ''});
 
 		// Ensure we're requesting a valid problem
 		if (app.curProbIndex >= 0 && app.curProbIndex < app.problemList.length)

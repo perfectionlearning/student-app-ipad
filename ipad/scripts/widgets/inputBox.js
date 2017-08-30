@@ -362,7 +362,6 @@ framework.widget.inputBox = function()
 	//=======================================================
 	function keyBackspace()
 	{
-		console.log('in keybackspace')
 		if (cursor > 0)
 		{
 			content = content.substr(0, cursor-1) + content.substr(cursor);

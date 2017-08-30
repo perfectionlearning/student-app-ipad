@@ -65,6 +65,25 @@
 	}
 
 	//=======================================================
+	// Check for step answer duplication, to prevent "spamming."
+	//=======================================================
+	view.checkStepAnswerDup = function(stepNdx, type, val) {
+		var result = false;
+		if (view.lastStepAnswer) {
+			var lastStepNdx = view.lastStepAnswer.stepNdx;
+			var lastVal = JSON.stringify(view.lastStepAnswer.val);
+			result = lastStepNdx === stepNdx && JSON.stringify(val) === lastVal;
+		}
+		view.lastStepAnswer = {
+			stepNdx: stepNdx,
+			type: type,
+			val: val
+		};
+
+		return result;
+	};
+
+	//=======================================================
 	// Hand off submit action to the controller
 	//=======================================================
 	view.stepSubmit = function()
@@ -75,8 +94,11 @@
 		var wid = fw.getWidget('stepByStep');
 		var type = wid.curType();
 		var val = view.getStepSubmission(type);
+		var state = problem.get('state');
+		var curStep = state.get('curStep');
+		var isDuplicate = view.checkStepAnswerDup(curStep, type, val);
 
-		if (wasValueEntered(type, val))
+		if (!isDuplicate && wasValueEntered(type, val))
 		{
 			// The widget needs to scrollToEnd before displaying the result text!
 			wid.scrollToEnd(function(){

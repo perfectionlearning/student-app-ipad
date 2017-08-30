@@ -25,9 +25,20 @@
 
 		vw.drawList.setParam('goUp', 'image', 'HomeworkUp');
 
-		app.resizeStageHeight(app.style.stageHeight);
-		$(window.parent).scrollTop(0);
-		app.router.navigate('assign/' + app.curAssign);
+		// Check for direct link to problem within assignment.
+		if (app.directProblem) {
+			app.directProblemRoute = 'assignprob/' + app.curAssign + '/' + app.directProblem;
+			app.curProblem = app.directProblem;
+			app.directProblem = null;
+      app.resizeStageHeight(app.style.stageHeight);
+		  $(window.parent).scrollTop(0);
+			app.router.navigate(app.directProblemRoute);
+		} else {
+			app.directProblemRoute = null;
+      app.resizeStageHeight(app.style.stageHeight);
+		  $(window.parent).scrollTop(0);
+			app.router.navigate('assign/' + app.curAssign);
+		}
 	};
 
 	//=======================================================
@@ -164,8 +175,13 @@
 		// Show the assignment name (docks to score - do after)
 		showAssignName();
 
-		// Show the problem list
-		showList();
+		// Go directly to problem within assignment, or Show the problem list
+		if (app.directProblemRoute) {
+			app.linkToObject('prob');
+		}
+		else {
+			showList();
+		}
 	}
 
 	//=======================================================
@@ -209,7 +225,6 @@
 	//=======================================================
 	function showScore()
 	{
-		console.log('showScore mode', curMode);
 		if (curMode === 'drill')
 			showScoreDrill()
 		else

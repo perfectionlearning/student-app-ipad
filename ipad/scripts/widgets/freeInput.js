@@ -193,7 +193,6 @@ framework.widget.freeInput = function()
 		// #1 is potentially hacky and messy, but it's the quickest to implement.  It requires writing a messy, custom filter everywhere we receive events!
 
 		// Filter event.  Make sure data.id matches the id of one of our inputs.
-
 		$.each(inputs, function(idx, val) {
 			if (val.id === data.id)
 			{

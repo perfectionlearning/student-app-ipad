@@ -16,8 +16,6 @@
 //  backgroundColor:
 //  padding:
 //======================================================
-
-
 framework.widget.keypad = function()
 {
 	var that = this;
@@ -38,8 +36,6 @@ framework.widget.keypad = function()
 
 	if (visible)
 		that.fadeIn(undefined, 1, null, true);	// Don't queue. We might receive a show() immediately followed by a hide()
-
-
 
 	//=======================================================
 	//=======================================================

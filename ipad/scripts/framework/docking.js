@@ -224,6 +224,7 @@
 			case 'top':
 			case 'top2':
 				return widRef.y;
+
 			case 'bottom':
 			case 'bottom2':
 				return widRef.y + widRef.height();	// Theoretically should be '-1' but we'll treat bottom and right as one pixel beyond so things line up properly
@@ -325,11 +326,7 @@
 		var topStr = getTarget(wid, args, 'top', 'top2', 1);
 		var bottomStr = getTarget(wid, args, 'bottom', 'bottom2', 1);
 		var centerStr = getTarget(wid, args, 'centery', 'centery2', 1);
-
-
-
 		var yh = complexAxis(wid, args, topStr, bottomStr, centerStr, 1);
-
 
 		// Set the position based on top and left values
 		wid.setPos(Math.floor(xw[0]), Math.floor(yh[0]));
@@ -340,8 +337,6 @@
 		// Set the height
 		yh[1] && wid.height(Math.floor(yh[1]));
 	}
-
-
 
 	//=======================================================
 	// complexAxis
@@ -414,7 +409,7 @@
 
 		// Save docking information so we can do it again later
 		wid.dockTarget = args;
-
+		
 		// Check for simple mode
 		if (defined(args.wid))
 			simpleMode(wid, args);
