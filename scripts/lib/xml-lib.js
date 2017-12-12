@@ -330,8 +330,12 @@ function replaceSingle(all, name)
 function HTMLtoXHTML(str)
 {
 	// Pattern intended to find non-closed tags that don't have a / before the closing angle bracket.
-	var tagPattern = /<((br|hr|img)\s*([^\/>][^>]*[^\/>])*)>/g;
+//	var tagPattern = /<((br|hr|img)\s*([^\/>][^>]*[^\/>])*)>/g;
+	// The above pattern was causing str.replace to crash on image tags.
+	var tagPattern = /<((br|hr|img)\s*(.*?))>/g;
 	str = str.replace(tagPattern, "<$1/>");
+	// Since the above replace can cause doubling of / before >, replace // with /.
+	str = str.replace(/\/\//g, '/');
 	return str;
 }
 
